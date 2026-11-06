@@ -1,0 +1,16 @@
+---
+argument_specs:
+  main:
+    short_description: Deploy the app
+    options:
+      app_env:
+        type: str
+        required: true
+        choices: [test, prod]
+      app_user_name:
+        type: str
+        required: true
+      app_user_password:
+        type: str
+        required: true
+        no_log: true

@@ -1,0 +1,24 @@
+---
+- name: Deploy app TEST
+  hosts: server1
+  become: false
+  gather_facts: false
+  vars_files:
+    - vars/test_vars.yml
+    - vars/test_secrets.yml
+  roles:
+    - app
+  tags:
+    - deploy_test
+
+- name: Deploy app PROD
+  hosts: server1
+  become: false
+  gather_facts: false
+  vars_files:
+    - vars/prod_vars.yml
+    - vars/prod_secrets.yml
+  roles:
+    - app
+  tags:
+    - deploy_prod

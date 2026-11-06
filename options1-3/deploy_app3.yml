@@ -1,0 +1,11 @@
+---
+- name: Deploy app
+  hosts: server1
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Deploy app {{ item }}
+      ansible.builtin.include_tasks: deploy.yml
+      loop:
+        - test
+        - prod

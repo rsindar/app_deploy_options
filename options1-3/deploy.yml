@@ -1,0 +1,12 @@
+---
+- name: Import vars
+  ansible.builtin.include_vars:
+    file: vars/{{ item }}_vars.yml
+
+- name: Import secrets
+  ansible.builtin.include_vars:
+    file: vars/{{ item }}_secrets.yml
+
+- name: Deploy app
+  ansible.builtin.include_role:
+    name: app

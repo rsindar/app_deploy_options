@@ -1,0 +1,23 @@
+---
+- name: Deploy app
+  hosts: server1
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Deploy app TEST
+      ansible.builtin.import_role:
+        name: app
+      vars:
+        app_user_name: admin1
+        app_user_password: pass1
+      tags:
+        - deploy1
+
+    - name: Deploy app PROD
+      ansible.builtin.import_role:
+        name: app
+      vars:
+        app_user_name: admin2
+        app_user_password: pass2
+      tags:
+        - deploy1

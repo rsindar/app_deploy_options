@@ -1,0 +1,4 @@
+---
+app_env: test
+app_user_name: admin1
+app_user_password: "{{ vault_app_user_password }}"

@@ -1,0 +1,4 @@
+---
+- name: Print info
+  ansible.builtin.debug:
+    msg: "Username: {{ app_user_name }} | Password: {{ app_user_password }}"
